@@ -3,7 +3,6 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 $custom-blue: #4285f4;
@@ -11,21 +10,19 @@ $custom-blue: #4285f4;
 .input-field.blue-style input[type=text]:focus + label, input[type=password]:focus + label {
   color: $custom-blue !important;
 }
+
 /* label underline focus color */
 .input-field.blue-style input[type=text]:focus, input[type=password]:focus {
   border-bottom: 1px solid $custom-blue !important;
   box-shadow: 0 1px 0 0 $custom-blue !important;
 }
+
 .input-field.blue-style .prefix.active {
   color: $custom-blue !important;
 }
 
-#login {
-  padding-top: 20px;
-}
-
 .flex {
-  display: flex;
+  display: flex !important;
 }
 
 .logo {
@@ -35,6 +32,28 @@ $custom-blue: #4285f4;
 .logo-title {
   display: flex !important;
   align-items: center;
+}
+
+.background {
+  margin-bottom: 0;
+  height: 100%;
+  background: url("/assets/img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blue-hover:hover {
+  color: $custom-blue !important;
+}
+
+.brand-logo {
+  padding-left: 15px !important;
+  height: 100% !important;
 }
 
 .logo-medium {

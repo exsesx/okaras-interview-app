@@ -17,19 +17,24 @@
 {{#unless noHeader}}
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+            <div class="nav-wrapper blue text-blue">
+                <a href="/" class="brand-logo flex">
+                    <img src="assets/img/bird-logo.png" class="responsive-img logo logo-medium" alt="Logo">
+                    Logo
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="padding-right: 15px;">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a onclick="logout()">Logout</a></li>
+                    <!--<li>Logged as {{user.username}}</li>-->
                 </ul>
             </div>
         </nav>
     </header>
 {{/unless}}
-
 {{{body}}}
+
+<script src="/assets/js/custom/auth/logout.js"></script>
 
 </body>
 </html>

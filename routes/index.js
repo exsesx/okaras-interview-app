@@ -20,7 +20,7 @@ function alreadyAuthenticated(req, res, next) {
 
 router.get('/', ensureAuthenticated, function (req, res, next) {
     console.log(req, res);
-    res.render('mainPage', {title: 'Express'});
+    res.render('mainPage', {title: 'Home page'});
 });
 
 router.get('/login', alreadyAuthenticated, function (req, res, next) {
