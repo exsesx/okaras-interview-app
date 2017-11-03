@@ -1,16 +1,15 @@
 $("#login").submit(function (e) {
+    e.preventDefault();
 
-    var url = "/api/auth/login"; // the script where you handle the form input.
+    const url = "/api/auth/login",
+        data = $("#login").serialize();
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: $("#login").serialize(), // serializes the form's elements.
-        success: (data, textStatus, jqXHR) => {
-            if (typeof data.redirect == 'string')
-                window.location.href = window.location.protocol + "//" + window.location.host + data.redirect;
+    $.post(url, data).then((data) => {
+        if (typeof data.redirect == 'string') {
+            window.location.href = window.location.protocol + "//" + window.location.host + data.redirect;
         }
-    });
-
-    e.preventDefault(); // avoid to execute the actual submit of the form.
+    }, err => {
+        $(this).closest('form').find("input[type=text], input[type=password]").val("");
+        Materialize.updateTextFields();
+    })
 });

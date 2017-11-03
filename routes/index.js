@@ -24,7 +24,7 @@ router.get('/', ensureAuthenticated, function (req, res, next) {
 });
 
 router.get('/login', alreadyAuthenticated, function (req, res, next) {
-    res.render('auth/login');
+    res.render('auth/login', {noHeader: true});
 });
 
 router.get('/register', function (req, res, next) {

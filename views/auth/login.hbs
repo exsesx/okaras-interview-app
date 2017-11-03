@@ -1,25 +1,26 @@
-<div class="login-panel">
-    <div class="wrapper">
-        <h2 class="title">Please log in</h2>
-        <form id="login" class="login-form">
-            <div class="group">
-                <input type="text" name="username" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Name</label>
+<div class="row valign-wrapper max-height">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card medium">
+            <div class="card-content">
+                <span class="card-title logo-title">
+                    <img src="assets/img/bird-logo.png" class="responsive-img logo logo-medium" alt="Logo">Log in</span>
+                <form id="login">
+                    <div class="input-field blue-style">
+                        <input id="username" type="text" name="username" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-field blue-style">
+                        <input id="password" type="password" name="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="card-action right-align">
+                        <button class="btn waves-effect blue waves-light" type="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            <div class="group">
-                <input type="password" name="password" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Password</label>
-            </div>
-            <button class="btn pull-right goog-button-primary">Submit</button>
-        </form>
-        <p class="restore-password">
-            <a href="" class="text-center">Forgot your password?</a>
-        </p>
+        </div>
     </div>
 </div>
 
