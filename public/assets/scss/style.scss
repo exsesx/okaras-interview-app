@@ -7,12 +7,16 @@ html, body {
 
 $custom-blue: #4285f4;
 
-.input-field.blue-style input[type=text]:focus + label, input[type=password]:focus + label {
+.input-field.blue-style input[type=text]:focus + label,
+input[type=password]:focus + label,
+input[type=email]:focus + label {
   color: $custom-blue !important;
 }
 
 /* label underline focus color */
-.input-field.blue-style input[type=text]:focus, input[type=password]:focus {
+.input-field.blue-style input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
   border-bottom: 1px solid $custom-blue !important;
   box-shadow: 0 1px 0 0 $custom-blue !important;
 }
