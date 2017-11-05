@@ -1,14 +1,23 @@
+// todo refactor this.closest('form'), etc
+
 $("#register").submit(function (e) {
-    var url = "/api/auth/register"; // the script where you handle the form input.
+    e.preventDefault();
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: $("#register").serialize(), // serializes the form's elements.
-        success: function (data) {
-            alert(data); // show response from the php script.
+    const url = "/api/auth/register",
+        data = $("#register").serialize();
+
+    $.post(url, data).then((data) => {
+        if (typeof data.redirect == 'string') {
+            window.location.href = window.location.protocol + "//" + window.location.host + data.redirect;
         }
-    });
-
-    e.preventDefault(); // avoid to execute the actual submit of the form.
+        $(this).closest('form').find("input[type=text], input[type=password], input[type=email]").val("");
+        Materialize.updateTextFields();
+    }, err => {
+        $(this).closest('form').find("input[type=text], input[type=password], input[type=email]").val("");
+        Materialize.updateTextFields();;
+        console.error(err);
+    })
 });
+
+
+//todo validation
