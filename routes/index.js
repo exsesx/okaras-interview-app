@@ -24,11 +24,11 @@ router.get('/', ensureAuthenticated, function (req, res, next) {
 });
 
 router.get('/login', alreadyAuthenticated, function (req, res, next) {
-    res.render('auth/login', {noHeader: true});
+    res.render('auth/login', {noHeader: true, title: 'Login'});
 });
 
-router.get('/register', function (req, res, next) {
-    res.render('auth/register');
+router.get('/register', alreadyAuthenticated, function (req, res, next) {
+    res.render('auth/register', {noHeader: true, title: 'Register'});
 });
 
 module.exports = router;

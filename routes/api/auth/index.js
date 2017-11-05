@@ -1,9 +1,8 @@
-var express = require('express'),
+const express = require('express'),
     passport = require('../../../config/passportConfig');
 
 router = express.Router();
 
-/* GET users listing. */
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
     res.locals.user = req.session.passport.user;
     res.send({redirect: '/'});

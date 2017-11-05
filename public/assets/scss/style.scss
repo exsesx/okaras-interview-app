@@ -21,6 +21,17 @@ $custom-blue: #4285f4;
   color: $custom-blue !important;
 }
 
+input.blue-style {
+  & + label {
+    &:before {
+      border: 2px solid $custom-blue !important;
+    }
+    &:after {
+      background-color: $custom-blue !important;
+    }
+  }
+}
+
 .flex {
   display: flex !important;
 }

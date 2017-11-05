@@ -15,6 +15,12 @@ html, body {
 .input-field.blue-style .prefix.active {
   color: #4285f4 !important; }
 
+input.blue-style + label:before {
+  border: 2px solid #4285f4 !important; }
+
+input.blue-style + label:after {
+  background-color: #4285f4 !important; }
+
 .flex {
   display: flex !important; }
 
